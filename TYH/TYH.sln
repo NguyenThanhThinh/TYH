@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TYH.Domain", "TYH.Domain\TY
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TYH.Utilities", "TYH.Utilities\TYH.Utilities.csproj", "{49A0593C-DBB1-4C81-9509-A39B9CC2C18D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TYH.EntityFrameworkCore", "TYH.EntityFrameworkCore\TYH.EntityFrameworkCore.csproj", "{B38AD9CE-FE4B-4E51-BB6A-FE193E3F768C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{49A0593C-DBB1-4C81-9509-A39B9CC2C18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49A0593C-DBB1-4C81-9509-A39B9CC2C18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49A0593C-DBB1-4C81-9509-A39B9CC2C18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38AD9CE-FE4B-4E51-BB6A-FE193E3F768C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38AD9CE-FE4B-4E51-BB6A-FE193E3F768C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38AD9CE-FE4B-4E51-BB6A-FE193E3F768C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38AD9CE-FE4B-4E51-BB6A-FE193E3F768C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
