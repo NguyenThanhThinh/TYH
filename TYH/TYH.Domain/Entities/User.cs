@@ -3,8 +3,10 @@ using System;
 
 namespace TYH.Domain.Entities
 {
+    using System.ComponentModel.DataAnnotations.Schema;
     using TYH.Domain.Enums;
     using TYH.Domain.Interfaces;
+    [Table("Users")]
     public class User : IdentityUser<Guid>, IDateTracking, ISwitchable
     {
         public User()

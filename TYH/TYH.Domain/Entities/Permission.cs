@@ -6,7 +6,10 @@ namespace TYH.Domain.Entities
 {
     public class Permission : DomainEntity<int>
     {
-        public Permission() { }
+        public Permission()
+        {
+
+        }
         public Permission(Guid roleId, string functionId, bool canCreate,
             bool canRead, bool canUpdate, bool canDelete)
         {
@@ -25,9 +28,11 @@ namespace TYH.Domain.Entities
         public string FunctionId { get; set; }
 
         public bool CanCreate { set; get; }
+
         public bool CanRead { set; get; }
 
         public bool CanUpdate { set; get; }
+
         public bool CanDelete { set; get; }
 
 

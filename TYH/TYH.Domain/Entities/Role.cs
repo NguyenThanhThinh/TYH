@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TYH.Domain.Entities
 {
+    [Table("Roles")]
     public class Role:IdentityRole<Guid>
     {
         public Role() : base()
