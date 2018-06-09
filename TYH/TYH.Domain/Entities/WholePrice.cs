@@ -12,7 +12,7 @@ namespace TYH.Domain.Entities
 
         public decimal Price { get; set; }
 
-        [ForeignKey(nameof(Product))]
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
     }
 }

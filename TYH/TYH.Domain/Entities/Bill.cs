@@ -11,12 +11,10 @@ namespace TYH.Domain.Entities
 
     public class Bill : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        public Bill()
-        {
-        }
+        public Bill() { }
 
         public Bill(string customerName, string customerAddress, string customerMobile, string customerMessage,
-            BillStatus billStatus, PaymentMethod paymentMethod, Status status, string customerId)
+            BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
         {
             CustomerName = customerName;
             CustomerAddress = customerAddress;
@@ -29,7 +27,7 @@ namespace TYH.Domain.Entities
         }
 
         public Bill(int id, string customerName, string customerAddress, string customerMobile, string customerMessage,
-           BillStatus billStatus, PaymentMethod paymentMethod, Status status, string customerId)
+           BillStatus billStatus, PaymentMethod paymentMethod, Status status, Guid? customerId)
         {
             Id = id;
             CustomerName = customerName;
@@ -67,10 +65,9 @@ namespace TYH.Domain.Entities
         [DefaultValue(Status.Active)]
         public Status Status { set; get; } = Status.Active;
 
-        [StringLength(450)]
-        public string CustomerId { set; get; }
+        public Guid? CustomerId { set; get; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey("CustomerId")]
         public virtual User User { set; get; }
 
         public virtual ICollection<BillDetail> BillDetails { set; get; }

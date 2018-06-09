@@ -40,16 +40,16 @@
 
         public int SizeId { get; set; }
 
-        [ForeignKey(nameof(Bill))]
+        [ForeignKey("BillId")]
         public virtual Bill Bill { set; get; }
 
-        [ForeignKey(nameof(Product))]
+        [ForeignKey("ProductId")]
         public virtual Product Product { set; get; }
 
-        [ForeignKey(nameof(Color))]
+        [ForeignKey("ColorId")]
         public virtual Color Color { set; get; }
 
-        [ForeignKey(nameof(Size))]
+        [ForeignKey("SizeId")]
         public virtual Size Size { set; get; }
     }
 }

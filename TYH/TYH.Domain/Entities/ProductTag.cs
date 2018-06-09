@@ -7,14 +7,14 @@ namespace TYH.Domain.Entities
     {
         public int ProductId { get; set; }
 
-        [StringLength(50)]
-        [Column(TypeName = "varchar")]
+      
+        [Column(TypeName = "varchar(50)")]
         public string TagId { set; get; }
 
-        [ForeignKey(nameof(Product))]
+        [ForeignKey("ProductId")]
         public virtual Product Product { set; get; }
 
-        [ForeignKey(nameof(Tag))]
+        [ForeignKey("TagId")]
         public virtual Tag Tag { set; get; }
     }
 }

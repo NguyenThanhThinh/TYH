@@ -12,7 +12,7 @@ namespace TYH.Domain.Entities
         [StringLength(250)]
         public string Name { get; set; }
 
-        [ForeignKey(nameof(AdvertistmentPage))]
+        [ForeignKey("PageId")]
         public virtual AdvertistmentPage AdvertistmentPage { get; set; }
 
         public virtual ICollection<Advertistment> Advertistments { get; set; }

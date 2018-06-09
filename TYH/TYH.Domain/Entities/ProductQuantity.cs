@@ -20,13 +20,13 @@ namespace TYH.Domain.Entities
 
         public int Quantity { get; set; }
 
-        [ForeignKey(nameof(Product))]
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
 
-        [ForeignKey(nameof(Size))]
+        [ForeignKey("SizeId")]
         public virtual Size Size { get; set; }
 
-        [ForeignKey(nameof(Color))]
+        [ForeignKey("ColorId")]
         public virtual Color Color { get; set; }
     }
 }

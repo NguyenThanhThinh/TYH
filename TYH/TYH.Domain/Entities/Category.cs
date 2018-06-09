@@ -9,12 +9,13 @@ namespace TYH.Domain.Entities
     [Table("Categories")]
     public class Category : DomainEntity<int>, IHasSeoMetaData, ISwitchable, ISortable, IDateTracking
     {
-        public Category(string name, string description, int?
-            parentId, int? homeOrder, string image,
-            bool? homeFlag,
-            int sortOrder,
-            Status status, string seoPageTitle, string seoAlias,
-            string seoKeywords, string seoDescription)
+        public Category()
+        {
+            Products = new List<Product>();
+        }
+        public Category(string name, string description, int? parentId, int? homeOrder,
+             string image, bool? homeFlag, int sortOrder, Status status, string seoPageTitle, string seoAlias,
+             string seoKeywords, string seoDescription)
         {
             Name = name;
             Description = description;
@@ -29,7 +30,6 @@ namespace TYH.Domain.Entities
             SeoKeywords = seoKeywords;
             SeoDescription = seoDescription;
         }
-
         public string Name { get; set; }
 
         public string Description { get; set; }

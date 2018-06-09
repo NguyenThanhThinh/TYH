@@ -1,6 +1,6 @@
 ﻿namespace TYH.Domain.Interfaces
 {
-    public interface IHasSeoMeTaData
+    public interface IHasSeoMetaData
     {
         string SeoPageTitle { set; get; }
         string SeoAlias { set; get; }

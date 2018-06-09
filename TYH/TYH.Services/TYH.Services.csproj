@@ -5,8 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="AutoMapper\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TYH.Domain\TYH.Domain.csproj" />
-    <ProjectReference Include="..\TYH.EntityFrameworkCore\TYH.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

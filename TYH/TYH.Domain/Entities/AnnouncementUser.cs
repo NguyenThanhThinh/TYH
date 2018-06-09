@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TYH.Domain.Entities
@@ -9,16 +10,11 @@ namespace TYH.Domain.Entities
         [Required]
         public string AnnouncementId { get; set; }
 
-        [StringLength(450)]
-        [Required]
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public bool? HasRead { get; set; }
 
-        [ForeignKey(nameof(User))]
-        public virtual User User { get; set; }
-
-        [ForeignKey(nameof(Announcement))]
+        [ForeignKey("AnnouncementId")]
         public virtual Announcement Announcement { get; set; }
     }
 }

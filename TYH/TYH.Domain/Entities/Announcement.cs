@@ -21,10 +21,10 @@ namespace TYH.Domain.Entities
         [StringLength(250)]
         public string Content { set; get; }
 
-        [StringLength(450)]
-        public string UserId { set; get; }
+        
+        public Guid UserId { set; get; }
 
-        [ForeignKey(nameof(User))]
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
         public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }

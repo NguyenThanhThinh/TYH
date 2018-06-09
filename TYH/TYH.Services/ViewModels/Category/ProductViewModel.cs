@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using TYH.Domain.Enums;
 
-namespace TYH.Domain.Entities
+namespace TYH.Services.ViewModels.Category
 {
-    using TYH.Domain.Interfaces;
-    using TYH.Domain.Enums;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public class Product : DomainEntity<int>, ISwitchable, IDateTracking, IHasSeoMetaData
+   public class ProductViewModel
     {
+        public int Id { get; set; }
+
         [StringLength(255)]
         [Required]
         public string Name { get; set; }
@@ -46,13 +47,11 @@ namespace TYH.Domain.Entities
         [StringLength(255)]
         public string Unit { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public virtual Category Category { set; get; }
+        public CategoryViewModel ProductCategory { set; get; }
 
         public string SeoPageTitle { set; get; }
 
-        [Column(TypeName = "varchar(255)")]
-    
+        [StringLength(255)]
         public string SeoAlias { set; get; }
 
         [StringLength(255)]

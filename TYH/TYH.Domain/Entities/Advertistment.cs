@@ -28,7 +28,8 @@ namespace TYH.Domain.Entities
         public DateTime DateModified { set; get; }
         public int SortOrder { set; get; }
 
-        [ForeignKey(nameof(AdvertistmentPosition))]
+        [ForeignKey("PositionId")]
         public virtual AdvertistmentPosition AdvertistmentPosition { get; set; }
     }
+    
 }

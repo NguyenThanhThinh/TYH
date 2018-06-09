@@ -20,11 +20,11 @@ namespace TYH.Domain.Entities
             CanUpdate = canUpdate;
             CanDelete = canDelete;
         }
-        [Required]
+      
         public Guid RoleId { get; set; }
-
         [StringLength(128)]
         [Required]
+
         public string FunctionId { get; set; }
 
         public bool CanCreate { set; get; }
@@ -36,10 +36,10 @@ namespace TYH.Domain.Entities
         public bool CanDelete { set; get; }
 
 
-        [ForeignKey(nameof(Role))]
+        [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
 
-        [ForeignKey(nameof(Function))]
+        [ForeignKey("FunctionId")]
         public virtual Function Function { get; set; }
     }
 }

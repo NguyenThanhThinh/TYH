@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using TYH.Web.Data;
 using TYH.Web.Models;
 using TYH.Web.Services;
+using TYH.EntityFrameworkCore;
+using TYH.Domain.Entities;
+using AutoMapper;
 
 namespace TYH.Web
 {
@@ -26,16 +29,42 @@ namespace TYH.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<TYHDbContext>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddDbContext<TYHDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                o => o.MigrationsAssembly("TYH.EntityFrameworkCore")));
+
+            services.AddIdentity<User,Role>()
+                .AddEntityFrameworkStores<TYHDbContext>()
                 .AddDefaultTokenProviders();
+            // Configure Identity
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
 
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
+            services.AddAutoMapper();
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<UserManager<User>, UserManager<User>>();
+            services.AddScoped<RoleManager<Role>, RoleManager<Role>>();
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
 
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<DbInitializer>();
             services.AddMvc();
         }
 

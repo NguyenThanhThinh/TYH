@@ -8,10 +8,10 @@
 
         public string TagId { set; get; }
 
-        [ForeignKey(nameof(Blog))]
+        [ForeignKey("BlogId")]
         public virtual Blog Blog { set; get; }
 
-        [ForeignKey(nameof(Tag))]
+        [ForeignKey("TagId")]
         public virtual Tag Tag { set; get; }
     }
 }

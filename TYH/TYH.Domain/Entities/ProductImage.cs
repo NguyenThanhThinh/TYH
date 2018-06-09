@@ -7,7 +7,7 @@ namespace TYH.Domain.Entities
     {
         public int ProductId { get; set; }
 
-        [ForeignKey(nameof(Product))]
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
 
         [StringLength(250)]
