@@ -14,6 +14,9 @@ using TYH.Web.Services;
 using TYH.EntityFrameworkCore;
 using TYH.Domain.Entities;
 using AutoMapper;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace TYH.Web
 {
@@ -36,7 +39,7 @@ namespace TYH.Web
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                 o => o.MigrationsAssembly("TYH.EntityFrameworkCore")));
 
-            services.AddIdentity<User,Role>()
+            services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<TYHDbContext>()
                 .AddDefaultTokenProviders();
             // Configure Identity
@@ -76,6 +79,13 @@ namespace TYH.Web
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                app.UseStaticFiles(new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+                    RequestPath = new PathString("/vendor")
+                });
+
             }
             else
             {
