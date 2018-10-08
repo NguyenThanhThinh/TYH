@@ -1,0 +1,27 @@
+{
+  "systemParams": "win32-x64-57",
+  "modulesFolders": [
+    "wwwroot\\wwwroot\\lib"
+  ],
+  "flags": [],
+  "linkedModules": [],
+  "topLevelPatterns": [
+    "bootstrap@3.3.7",
+    "gentelella@1.4.0",
+    "jquery-validation-unobtrusive@3.2.6",
+    "jquery-validation@1.14.0",
+    "jquery@2.2.0"
+  ],
+  "lockfileEntries": {
+    "bootstrap@3.3.7": "http://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71",
+    "gentelella@1.4.0": "https://registry.yarnpkg.com/gentelella/-/gentelella-1.4.0.tgz#b3d15fd9c40c6ea47dc7f36290c8f89aee95efc5",
+    "jquery-validation-unobtrusive@3.2.6": "http://registry.npmjs.org/jquery-validation-unobtrusive/-/jquery-validation-unobtrusive-3.2.6.tgz#0f8767c5462e30b4a5743d12461e8057da7572e5",
+    "jquery-validation@1.14.0": "http://registry.npmjs.org/jquery-validation/-/jquery-validation-1.14.0.tgz#b8c04c9da19292fc33e2dc059b624c593715b23a",
+    "jquery-validation@>=1.8": "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.18.0.tgz#69898f6cddc3e8ef5811de84ff8b23fc24d93776",
+    "jquery@2.2.0": "https://registry.yarnpkg.com/jquery/-/jquery-2.2.0.tgz#d0e84ebbf199da51bf7ec39307f19b35754e9cba",
+    "jquery@>=1.8": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
+    "jquery@^1.7 || ^2.0 || ^3.1": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  },
+  "files": [],
+  "artifacts": {}
+}
