@@ -16,6 +16,7 @@
     "jquery-validation-unobtrusive@3.2.6",
     "jquery-validation@1.14.0",
     "jquery@2.2.0",
+    "notifyjs@^2.0.1",
     "nprogress@0.2.0"
   ],
   "lockfileEntries": {
@@ -39,6 +40,7 @@
     "jquery@^1.7 || ^2.0 || ^3.1": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
     "moment@^2.10.2": "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66",
     "moment@^2.9.0": "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66",
+    "notifyjs@^2.0.1": "https://registry.yarnpkg.com/notifyjs/-/notifyjs-2.0.1.tgz#509dc8c45b066801177e2b9b02c4dc8e0e932158",
     "nprogress@0.2.0": "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
   },
   "files": [],
