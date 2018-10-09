@@ -6,21 +6,40 @@
   "flags": [],
   "linkedModules": [],
   "topLevelPatterns": [
+    "bootstrap-daterangepicker@2.1.25",
     "bootstrap@3.3.7",
+    "chart.js@^2.7.2",
+    "fastclick@1.0.6",
+    "flot@^0.8.0-alpha",
+    "font-awesome@4.7.0",
     "gentelella@1.4.0",
     "jquery-validation-unobtrusive@3.2.6",
     "jquery-validation@1.14.0",
-    "jquery@2.2.0"
+    "jquery@2.2.0",
+    "nprogress@0.2.0"
   ],
   "lockfileEntries": {
+    "bootstrap-daterangepicker@2.1.25": "https://registry.yarnpkg.com/bootstrap-daterangepicker/-/bootstrap-daterangepicker-2.1.25.tgz#fcd8ba0b755a054d330d7a3b7c4dd8bb855cffb7",
     "bootstrap@3.3.7": "http://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71",
+    "chart.js@^2.7.2": "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.2.tgz#3c9fde4dc5b95608211bdefeda7e5d33dffa5714",
+    "chartjs-color-string@^0.5.0": "https://registry.yarnpkg.com/chartjs-color-string/-/chartjs-color-string-0.5.0.tgz#8d3752d8581d86687c35bfe2cb80ac5213ceb8c1",
+    "chartjs-color@^2.1.0": "https://registry.yarnpkg.com/chartjs-color/-/chartjs-color-2.2.0.tgz#84a2fb755787ed85c39dd6dd8c7b1d88429baeae",
+    "color-convert@^0.5.3": "https://registry.yarnpkg.com/color-convert/-/color-convert-0.5.3.tgz#bdb6c69ce660fadffe0b0007cc447e1b9f7282bd",
+    "color-name@^1.0.0": "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2",
+    "fastclick@1.0.6": "https://registry.yarnpkg.com/fastclick/-/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a",
+    "flot@^0.8.0-alpha": "https://registry.yarnpkg.com/flot/-/flot-0.8.0-alpha.tgz#9cbbc7147c10a47d2549db90bd2987ec1ba784ba",
+    "font-awesome@4.7.0": "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133",
     "gentelella@1.4.0": "https://registry.yarnpkg.com/gentelella/-/gentelella-1.4.0.tgz#b3d15fd9c40c6ea47dc7f36290c8f89aee95efc5",
     "jquery-validation-unobtrusive@3.2.6": "http://registry.npmjs.org/jquery-validation-unobtrusive/-/jquery-validation-unobtrusive-3.2.6.tgz#0f8767c5462e30b4a5743d12461e8057da7572e5",
     "jquery-validation@1.14.0": "http://registry.npmjs.org/jquery-validation/-/jquery-validation-1.14.0.tgz#b8c04c9da19292fc33e2dc059b624c593715b23a",
     "jquery-validation@>=1.8": "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.18.0.tgz#69898f6cddc3e8ef5811de84ff8b23fc24d93776",
     "jquery@2.2.0": "https://registry.yarnpkg.com/jquery/-/jquery-2.2.0.tgz#d0e84ebbf199da51bf7ec39307f19b35754e9cba",
+    "jquery@>=1.10": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
     "jquery@>=1.8": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
-    "jquery@^1.7 || ^2.0 || ^3.1": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+    "jquery@^1.7 || ^2.0 || ^3.1": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
+    "moment@^2.10.2": "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66",
+    "moment@^2.9.0": "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66",
+    "nprogress@0.2.0": "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
   },
   "files": [],
   "artifacts": {}

@@ -1,9 +1,15 @@
 {
   "dependencies": {
     "bootstrap": "3.3.7",
+    "bootstrap-daterangepicker": "2.1.25",
+    "chart.js": "^2.7.2",
+    "fastclick": "1.0.6",
+    "flot": "^0.8.0-alpha",
+    "font-awesome": "4.7.0",
     "gentelella": "1.4.0",
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
-    "jquery-validation-unobtrusive": "3.2.6"
+    "jquery-validation-unobtrusive": "3.2.6",
+    "nprogress": "0.2.0"
   }
 }
