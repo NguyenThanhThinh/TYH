@@ -25,4 +25,8 @@
     <ProjectReference Include="..\TYH.EntityFrameworkCore\TYH.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\admin\controllers\product\" />
+  </ItemGroup>
+
 </Project>
