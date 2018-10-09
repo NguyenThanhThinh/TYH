@@ -6,6 +6,7 @@
   "flags": [],
   "linkedModules": [],
   "topLevelPatterns": [
+    "bootbox@^4.4.0",
     "bootstrap-daterangepicker@2.1.25",
     "bootstrap@3.3.7",
     "chart.js@^2.7.2",
@@ -20,6 +21,7 @@
     "nprogress@0.2.0"
   ],
   "lockfileEntries": {
+    "bootbox@^4.4.0": "https://registry.yarnpkg.com/bootbox/-/bootbox-4.4.0.tgz#ff7f898fb87d4527e547feb64158f88450d1a0c9",
     "bootstrap-daterangepicker@2.1.25": "https://registry.yarnpkg.com/bootstrap-daterangepicker/-/bootstrap-daterangepicker-2.1.25.tgz#fcd8ba0b755a054d330d7a3b7c4dd8bb855cffb7",
     "bootstrap@3.3.7": "http://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71",
     "chart.js@^2.7.2": "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.2.tgz#3c9fde4dc5b95608211bdefeda7e5d33dffa5714",

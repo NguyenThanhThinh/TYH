@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootbox": "^4.4.0",
     "bootstrap": "3.3.7",
     "bootstrap-daterangepicker": "2.1.25",
     "chart.js": "^2.7.2",
