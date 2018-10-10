@@ -1,20 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Linq;
-
+using Microsoft.EntityFrameworkCore.Design;
+using TYH.Domain.Entities;
+using TYH.Domain.Interfaces;
+using TYH.EntityFrameworkCore.Configurations;
+using TYH.EntityFrameworkCore.Extensions;
 
 namespace TYH.EntityFrameworkCore
 {
-    using Microsoft.EntityFrameworkCore.Design;
-    using Microsoft.Extensions.Configuration;
-    using System.IO;
-    using TYH.Domain.Entities;
-    using TYH.Domain.Interfaces;
-    using TYH.EntityFrameworkCore.Configurations;
-    using TYH.EntityFrameworkCore.Extensions;
     public class TYHDbContext : IdentityDbContext<User, Role, Guid>
     {
         public TYHDbContext(DbContextOptions options) : base(options)
@@ -69,10 +65,10 @@ namespace TYH.EntityFrameworkCore
             builder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
 
             builder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles")
-                .HasKey(x => new { x.RoleId, x.UserId });
+                .HasKey(x => new {x.RoleId, x.UserId});
 
             builder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens")
-               .HasKey(x => new { x.UserId });
+                .HasKey(x => new {x.UserId});
 
             #endregion Identity Config
 
@@ -93,37 +89,33 @@ namespace TYH.EntityFrameworkCore
 
         public override int SaveChanges()
         {
-            var modified = ChangeTracker.Entries().Where(e => e.State == EntityState.Modified || e.State == EntityState.Added);
+            var modified = ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Modified || e.State == EntityState.Added);
 
-            foreach (EntityEntry item in modified)
+            foreach (var item in modified)
             {
                 var changedOrAddedItem = item.Entity as IDateTracking;
                 if (changedOrAddedItem != null)
                 {
-                    if (item.State == EntityState.Added)
-                    {
-                        changedOrAddedItem.DateCreated = DateTime.Now;
-                    }
+                    if (item.State == EntityState.Added) changedOrAddedItem.DateCreated = DateTime.Now;
+
                     changedOrAddedItem.DateModified = DateTime.Now;
                 }
             }
+
             return base.SaveChanges();
         }
     }
 
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<TYHDbContext>
+    public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<TYHDbContext>
     {
-        public TYHDbContext CreateDbContext(string[] args)
+        TYHDbContext IDesignTimeDbContextFactory<TYHDbContext>.CreateDbContext(string[] args)
         {
-            IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json").Build();
-            var builder = new DbContextOptionsBuilder<TYHDbContext>();
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
-            builder.UseSqlServer(connectionString);
-            return new TYHDbContext(builder.Options);
+            var optionsBuilder = new DbContextOptionsBuilder<TYHDbContext>();
+            optionsBuilder.UseSqlServer(
+                "Server=NTTHINH-PC\\SQL2K14;Database=TYH;Integrated Security=true;Trusted_Connection=True;MultipleActiveResultSets=true");
+
+            return new TYHDbContext(optionsBuilder.Options);
         }
     }
 }
-
-
