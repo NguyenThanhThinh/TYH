@@ -1,4 +1,4 @@
-﻿var tyh = {
+﻿﻿var tyh = {
     configs: {
         pageSize: 10,
         pageIndex: 1
@@ -16,7 +16,7 @@
             // arrow size in pixels
             arrowSize: 5,
             // position defines the notification position though uses the defaults below
-            position: 'top right',
+            position: '...',
             // default positions
             elementPosition: 'top right',
             globalPosition: 'top right',
@@ -36,9 +36,8 @@
             gap: 2
         });
     },
-    confirm: function (message, okCallBack) {
+    confirm: function (message, okCallback) {
         bootbox.confirm({
-            size: "small",
             message: message,
             buttons: {
                 confirm: {
@@ -46,22 +45,21 @@
                     className: 'btn-success'
                 },
                 cancel: {
-                    label: 'Huỷ',
+                    label: 'Hủy',
                     className: 'btn-danger'
                 }
             },
             callback: function (result) {
                 if (result === true) {
-                    okCallBack();
+                    okCallback();
                 }
-
             }
         });
     },
-    dateFomatJson: function (datetime) {
-        if (datetime == null || datetime === '')
+    dateFormatJson: function (datetime) {
+        if (datetime == null || datetime == '')
             return '';
-        var newdate = new Date(datetime);
+        var newdate = new Date(parseInt(datetime.substr(6)));
         var month = newdate.getMonth() + 1;
         var day = newdate.getDate();
         var year = newdate.getFullYear();
@@ -77,10 +75,10 @@
             mm = "0" + mm;
         return day + "/" + month + "/" + year;
     },
-    datetimeFomatJson: function (datetime) {
-        if (datetime === null || datetime === '')
+    dateTimeFormatJson: function (datetime) {
+        if (datetime == null || datetime == '')
             return '';
-        var newdate = new Date(datetime);
+        var newdate = new Date(parseInt(datetime.substr(6)));
         var month = newdate.getMonth() + 1;
         var day = newdate.getDate();
         var year = newdate.getFullYear();
@@ -109,12 +107,12 @@
                 .addClass('hide');
     },
     getStatus: function (status) {
-        if (status === 1)
+        if (status == 1)
             return '<span class="badge bg-green">Kích hoạt</span>';
         else
             return '<span class="badge bg-red">Khoá</span>';
     },
-    fomatNumber: function (number, precision) {
+    formatNumber: function (number, precision) {
         if (!isFinite(number)) {
             return number.toString();
         }
@@ -122,5 +120,27 @@
         var a = number.toFixed(precision).split('.');
         a[0] = a[0].replace(/\d(?=(\d{3})+$)/g, '$&,');
         return a.join('.');
+    },
+    unflattern: function (arr) {
+        var map = {};
+        var roots = [];
+        for (var i = 0; i < arr.length; i += 1) {
+            var node = arr[i];
+            node.children = [];
+            map[node.Id] = i; // use map to look-up the parents
+            if (node.ParentId !== null) {
+                arr[map[node.ParentId]].children.push(node);
+            } else {
+                roots.push(node);
+            }
+        }
+        return roots;
     }
 }
+
+$(document).ajaxSend(function (e, xhr, options) {
+    if (options.type.toUpperCase() == "POST" || options.type.toUpperCase() == "PUT") {
+        var token = $('form').find("input[name='__RequestVerificationToken']").val();
+        xhr.setRequestHeader("RequestVerificationToken", token);
+    }
+});
