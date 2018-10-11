@@ -48,7 +48,7 @@
             dateType: "json",
             url: "/admin/login/authen",
             success: function(res) {
-                if (res.success) {
+                if (res.Success) {
                     window.location.href = "/Admin/Home/Index";
                 } else {
                     tyh.notify("Đăng nhập không đúng", "error");
