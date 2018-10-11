@@ -27,6 +27,8 @@ namespace TYH.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Page login index");
+
             return View();
         }
 
