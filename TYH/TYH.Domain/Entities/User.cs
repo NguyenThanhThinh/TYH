@@ -21,6 +21,8 @@ namespace TYH.Domain.Entities
             Avatar = avatar;
             Status = status;
         }
+
+        public string Email { get; set; }
         public string FullName { get; set; }
 
         public DateTime? BirthDay { set; get; }

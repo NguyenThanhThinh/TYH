@@ -113,7 +113,7 @@ namespace TYH.EntityFrameworkCore
         {
             var optionsBuilder = new DbContextOptionsBuilder<TYHDbContext>();
             optionsBuilder.UseSqlServer(
-                "Server=NTTHINH-PC\\SQL2K14;Database=TYH;Integrated Security=true;Trusted_Connection=True;MultipleActiveResultSets=true");
+                "Server=THINH\\SQLEXPRESS;Database=TYH;Integrated Security=true;Trusted_Connection=True;MultipleActiveResultSets=true");
 
             return new TYHDbContext(optionsBuilder.Options);
         }

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TYH.Domain.Entities;
 using TYH.Domain.Enums;
@@ -224,7 +223,9 @@ namespace TYH.EntityFrameworkCore
                 {
                     Id = "HomeTitle",
                     Name = "Tiêu đề trang chủ",
-                    Value1 = "Trang chủ TeduShop",
+                    Value1 = "Trang chủ TYH" +
+                    "" +
+                    "",
                     Status = Status.Active
                 });
             }
@@ -234,7 +235,7 @@ namespace TYH.EntityFrameworkCore
                 {
                     Id = "HomeMetaKeyword",
                     Name = "Từ khoá trang chủ",
-                    Value1 = "Trang chủ TeduShop",
+                    Value1 = "Trang chủ TYH",
                     Status = Status.Active
                 });
             }
@@ -244,7 +245,7 @@ namespace TYH.EntityFrameworkCore
                 {
                     Id = "HomeMetaDescription",
                     Name = "Mô tả trang chủ",
-                    Value1 = "Trang chủ TeduShop",
+                    Value1 = "Trang chủ TYH",
                     Status = Status.Active
                 });
             }
